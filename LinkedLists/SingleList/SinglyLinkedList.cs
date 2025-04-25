@@ -88,4 +88,22 @@ public class SinglyLinkedList<T>
             current.Next = current.Next.Next;
         }
     }
+
+    public void Reverse()
+    {
+        SingleNode<T> prev = null;
+        SingleNode<T> current = head;
+        SingleNode<T> next = null;
+        while (current != null)
+        {
+            // Store the next node
+            next = current.Next!;
+            // Reverse the current node's pointer
+            current.Next = prev;
+            // Move the pointers one position ahead
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
 }

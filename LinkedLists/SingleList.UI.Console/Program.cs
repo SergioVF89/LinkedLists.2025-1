@@ -60,6 +60,11 @@ do
                 }
             }
             break;
+
+        case "7":
+            singleList.Reverse();
+            Console.WriteLine("List reversed.");
+            break;
     }
 } while (opc != "0");
 
@@ -71,6 +76,7 @@ string Menu()
     Console.WriteLine("4. Contains");
     Console.WriteLine("5. Clear all list");
     Console.WriteLine("6. Remove item");
+    Console.WriteLine("7. Reverse");
     Console.WriteLine("0. Exit");
     Console.Write("Choose an option: ");
     return Console.ReadLine() ?? "0";

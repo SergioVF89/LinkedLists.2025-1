@@ -106,4 +106,33 @@ public class SinglyLinkedList<T>
         }
         head = prev;
     }
+
+    public void Sort(bool ascending = true)
+    {
+        if (head == null || head.Next == null)
+        {
+            return;
+        }
+
+        bool swapped;
+        do
+        {
+            swapped = false;
+            var current = head;
+
+            while (current.Next != null)
+            {
+                if ((ascending && Comparer<T>.Default.Compare(current.Data, current.Next.Data) > 0) ||
+                    (!ascending && Comparer<T>.Default.Compare(current.Data, current.Next.Data) < 0))
+                {
+                    var temp = current.Data;
+                    current.Data = current.Next.Data;
+                    current.Next.Data = temp;
+
+                    swapped = true;
+                }
+                current = current.Next;
+            }
+        } while (swapped);
+    }
 }

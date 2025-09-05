@@ -1,6 +1,6 @@
 ﻿
 using DoubleList5;
-//prueba
+//prueba1
 DoublyLinkedList<string> list = new DoublyLinkedList<string>();
 bool exit = false;
 
